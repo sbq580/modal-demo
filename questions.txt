@@ -1,0 +1,66 @@
+Q1. What is the difference between Cookie / Local Storage / Session Storage?
+Ans: All the three are client side data storage techniques. 
+Cookies are for storing very small data (~4kb) and primary used for authentication tokens. Once set they are sent with every subsequent
+request to the same domain. They are primarily for server-side reading. Cookies can have an expiration date.
+
+Local Storage is a key-value data store for storing unstructured data. It has maximum data limit of 5 MB. It can be read and write through
+JavaScript. It has no expiration time and also not secure.
+
+Session Storage is also a key-value store and similar to local storage but it exists for a particular browser/tab session. It gets cleared
+when you close the browser or tab.
+
+Q2. What is the significance of, and reason for, wrapping the entire content of a JavaScript source file in a function block?
+Ans: The main reason for doing this is to prevent the global scope from getting polluted.
+
+Q3. What will the code below output? Explain your answer.
+
+console.log(0.1 + 0.2);
+
+console.log(0.1 + 0.2 == 0.3);
+Ans: 0.30000000000000004
+false
+It is because of floating point math. The decimal representation by computers is not accurate so there are discrepencies is most cases. 
+
+Q4. Write a sum method which will work properly when invoked using either syntax below.
+
+console.log(sum(2,3));   // Outputs 5
+
+console.log(sum(2)(3));  // Outputs 5
+Ans: 
+function sum (...args) {
+    if (args.length > 1) {
+        return args[0] + args[1];
+    }
+    return function (b) {
+        return args[0] + b;
+    }
+}
+console.log(sum(2, 3));
+console.log(sum(2)(3));
+
+Q5. What is the output of the following code?
+
+       var length = 10;
+
+function fn()  {
+
+console.log(this.length);
+
+}
+
+var obj = {
+
+length: 5,
+
+method: function(fn) {
+
+fn();
+
+arguments[0]();
+
+}
+
+};
+
+obj.method(fn, 1);
+Ans: 10, 2

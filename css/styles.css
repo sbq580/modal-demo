@@ -1,0 +1,122 @@
+.modal-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.7s ease;
+  }
+  .modal-content {
+    width: 1000px;
+    height: 500px;
+    position: fixed;
+    background-color: #FFD101;
+    border-radius: 4px;
+    transition: all 0.7s ease;
+  }
+  .modal-hidden {
+      display: none;
+  }
+  .close-icon {
+    color: #000;
+    float: right;
+    font-size: 48px;
+    font-weight: bold;
+    height: 48px;
+    margin-right: 10px;
+  }
+  .close-icon:hover {
+    color: #aaa;
+    cursor: pointer;
+  }
+  .main{
+    display: flex;
+    width: 100%;
+    height: 85%;
+    margin-top: 2rem;
+  }
+  .left-section {
+    flex: auto;
+    float: left;
+    width: 60%;
+    border: 0px solid;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px 0 25px;
+  }
+  .right-section {
+    flex: auto;
+    float: right;
+    border: 0px solid;
+    width: 40%;
+  }
+  form {
+    border: 0px solid;
+    padding: 0 0 5px 50px;
+  }
+  .form-control {
+    margin: 10px auto;
+  }
+  input{
+    border: none;
+    border-radius: 1px;
+  }
+  input:focus {
+    outline: none;
+  }
+  input[type='text'],
+  input[type='email']{
+    height: 55px;
+    width: 85%;
+    padding-left: 25px;
+  }
+  .btn {
+    width: 85%;
+    height: 55px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border: none;
+  }
+  .btn:hover {
+    cursor: pointer;
+  }
+  .link {
+    font-size: 0.75rem;
+    width: 100%;
+    text-align: center;
+  }
+  .headline {
+    margin: 10px;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .font-b {
+    font-weight: 600;
+  }
+  .error-txt {
+      color: red;
+      text-align: center;
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+  
+    .modal-content {
+        width: 450px;
+        height: 400px;
+    }
+    .right-section {
+        display: none;
+    }
+    .left-section {
+        width: 100%;
+    }
+    .headline {
+        font-size: 1.5rem;
+    }
+    
+  }
